@@ -11,7 +11,7 @@ namespace WorkingWithEFCore.Models
     public class Product
     {
         //  map pk to database
-        public int ProdyuctId { get; set; }
+        public int ProductId { get; set; }
 
         // map with extra attributes
         [Required]
