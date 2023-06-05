@@ -46,56 +46,9 @@ namespace CodeFirstExample.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2023, 6, 5, 14, 52, 55, 971, DateTimeKind.Local).AddTicks(8847),
+                            CreatedOn = new DateTime(2023, 6, 5, 15, 18, 13, 281, DateTimeKind.Local).AddTicks(5345),
                             Name = "Test"
                         });
-                });
-
-            modelBuilder.Entity("CodeFirstExample.Models.VoorbeeldCategorie", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VoorbeeldCategorieen");
-                });
-
-            modelBuilder.Entity("VoorbeeldVoorbeeldCategorie", b =>
-                {
-                    b.Property<int>("VoorbeeldCategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VoorbeeldsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("VoorbeeldCategoriesId", "VoorbeeldsId");
-
-                    b.HasIndex("VoorbeeldsId");
-
-                    b.ToTable("VoorbeeldVoorbeeldCategorie");
-                });
-
-            modelBuilder.Entity("VoorbeeldVoorbeeldCategorie", b =>
-                {
-                    b.HasOne("CodeFirstExample.Models.VoorbeeldCategorie", null)
-                        .WithMany()
-                        .HasForeignKey("VoorbeeldCategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CodeFirstExample.Models.Voorbeeld", null)
-                        .WithMany()
-                        .HasForeignKey("VoorbeeldsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

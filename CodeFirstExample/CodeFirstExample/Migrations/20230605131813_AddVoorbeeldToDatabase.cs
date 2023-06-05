@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CodeFirstExample.Migrations
 {
+    /// <inheritdoc />
     public partial class AddVoorbeeldToDatabase : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -26,9 +28,10 @@ namespace CodeFirstExample.Migrations
             migrationBuilder.InsertData(
                 table: "Voorbeelden",
                 columns: new[] { "Id", "CreatedOn", "Name" },
-                values: new object[] { 1, new DateTime(2023, 6, 5, 14, 33, 50, 552, DateTimeKind.Local).AddTicks(3148), "Test" });
+                values: new object[] { 1, new DateTime(2023, 6, 5, 15, 18, 13, 281, DateTimeKind.Local).AddTicks(5345), "Test" });
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

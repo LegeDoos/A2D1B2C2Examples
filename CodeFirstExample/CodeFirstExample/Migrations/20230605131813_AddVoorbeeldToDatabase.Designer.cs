@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeFirstExample.Migrations
 {
     [DbContext(typeof(VoorbeeldDb))]
-    [Migration("20230605123350_AddVoorbeeldToDatabase")]
+    [Migration("20230605131813_AddVoorbeeldToDatabase")]
     partial class AddVoorbeeldToDatabase
     {
         /// <inheritdoc />
@@ -49,7 +49,7 @@ namespace CodeFirstExample.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2023, 6, 5, 14, 33, 50, 552, DateTimeKind.Local).AddTicks(3148),
+                            CreatedOn = new DateTime(2023, 6, 5, 15, 18, 13, 281, DateTimeKind.Local).AddTicks(5345),
                             Name = "Test"
                         });
                 });

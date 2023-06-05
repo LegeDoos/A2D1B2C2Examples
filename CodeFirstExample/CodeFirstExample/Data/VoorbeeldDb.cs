@@ -11,7 +11,7 @@ namespace CodeFirstExample.Data
     public class VoorbeeldDb : DbContext
     {
         public DbSet<Voorbeeld> Voorbeelden { get; set; }
-        public DbSet<VoorbeeldCategorie> VoorbeeldCategorieen { get; set; }
+       // public DbSet<VoorbeeldCategorie> VoorbeeldCategorieen { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
