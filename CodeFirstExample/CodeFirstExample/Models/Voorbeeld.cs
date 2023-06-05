@@ -10,12 +10,14 @@ namespace CodeFirstExample.Models
     public class Voorbeeld
     {
         public int Id { get; set; }
-        
+
         [Required]
         public string? Name { get; set; }
-        
+
         public DateTime CreatedOn { get; set; } = DateTime.Now;
-        
-//        public ICollection<VoorbeeldCategorie>? VoorbeeldCategories { get; set; }
+
+        // relatie
+        public int VoorbeeldCategorieId { get; set; }
+        public VoorbeeldCategorie VoorbeeldCategorie { get; set; } = null!;
     }
 }

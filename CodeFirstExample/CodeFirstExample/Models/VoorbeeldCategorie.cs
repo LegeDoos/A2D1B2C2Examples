@@ -10,8 +10,10 @@ namespace CodeFirstExample.Models
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
+        // relatie
         public ICollection<Voorbeeld>? Voorbeelds { get; set; }
+
     }
 }
