@@ -15,5 +15,7 @@ namespace CodeFirstExample.Models
         public string? Name { get; set; }
         
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+
+        public ICollection<VoorbeeldCategorie>? VoorbeeldCategories { get; set; }
     }
 }
