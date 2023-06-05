@@ -8,7 +8,7 @@ using WorkingWithEFCore.Models;
 
 namespace WorkingWithEFCore.Data
 {
-    public class Northwind : DbContext
+    public class NorthwindDb : DbContext
     {
         public DbSet<Category>? Categories{ get; set; } // map to table name!
         public DbSet<Product>? Products { get; set; }

@@ -1,4 +1,5 @@
-﻿using WorkingWithEFCore.Data;
+﻿using WorkingWithEFCore.Models;
+using WorkingWithEFCore.Data;
 
 namespace WorkingWithEFCore
 {
@@ -8,7 +9,7 @@ namespace WorkingWithEFCore
         {
             Console.WriteLine("Hello, Working With EF Core!!!!");
 
-            Northwind db = new Northwind(); ;
+            NorthwindDb db = new NorthwindDb(); ;
             Console.WriteLine($"Provider: {db.Database.ProviderName}");
         }
     }
