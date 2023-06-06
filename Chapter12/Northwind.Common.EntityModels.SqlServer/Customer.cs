@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Northwind.Common.EntityModels.SqlServer;
 
 public partial class Customer
 {
+    [Key, StringLength(5), RegularExpression("[A-Z]{5}"), Required]
     public string CustomerId { get; set; } = null!;
 
+    [Required]
     public string CompanyName { get; set; } = null!;
 
     public string? ContactName { get; set; }
