@@ -19,8 +19,6 @@ namespace Northwind.Shared
                 //  options.LogTo(WriteLine, new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
             });
             return services;
-
         }
-
     }
 }
