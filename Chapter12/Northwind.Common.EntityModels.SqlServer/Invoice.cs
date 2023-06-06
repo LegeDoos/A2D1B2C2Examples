@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Northwind.Common.EntityModels.SqlServer;
+namespace Northwind.Shared;
 
 public partial class Invoice
 {

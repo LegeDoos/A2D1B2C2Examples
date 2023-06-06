@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Northwind.Common.EntityModels.SqlServer;
+namespace Northwind.Shared;
 
 public partial class Customer
 {

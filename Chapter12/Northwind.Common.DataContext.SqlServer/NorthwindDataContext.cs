@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Northwind.Common.EntityModels.SqlServer;
+namespace Northwind.Shared;
 
 public partial class NorthwindDataContext : DbContext
 {
