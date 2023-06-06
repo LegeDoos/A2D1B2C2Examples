@@ -20,6 +20,9 @@ namespace Northwind.Controllers
 
         public IActionResult Privacy()
         {
+            _logger.LogError("This is a serious error (not!)");
+            _logger.LogWarning("Warning 1... 2...");
+            _logger.LogCritical("Einde oefening!");
             return View();
         }
 
