@@ -18,7 +18,8 @@ namespace Northwind.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeIndexViewModel model = new(Random.Shared.Next(1, 1001), db.Categories.ToList(), db.Products.ToList());
+            return View(model);
         }
 
         public IActionResult Privacy()
