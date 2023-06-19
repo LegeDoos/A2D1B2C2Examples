@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Northwind.Models;
+using Northwind.Shared;
 using System.Diagnostics;
 
 namespace Northwind.Controllers
@@ -7,10 +8,12 @@ namespace Northwind.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly NorthwindDataContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, NorthwindDataContext injectedContext)
         {
             _logger = logger;
+            db = injectedContext;
         }
 
         public IActionResult Index()
