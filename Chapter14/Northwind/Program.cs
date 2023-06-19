@@ -1,3 +1,4 @@
+// sectie 1: Namespaces
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Data;
@@ -8,10 +9,13 @@ namespace Northwind
     {
         public static void Main(string[] args)
         {
+            // sectie 2: configure host web server en services
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            
+            // DIT IS EEN VOORBEELD VAN EEN DEPENDENCY SERVICE (Dependency injection): 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -22,6 +26,8 @@ namespace Northwind
 
             var app = builder.Build();
 
+
+            // sectie 3:
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -46,6 +52,7 @@ namespace Northwind
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
+            // sectie 4: starten van de applicatie
             app.Run();
         }
     }
