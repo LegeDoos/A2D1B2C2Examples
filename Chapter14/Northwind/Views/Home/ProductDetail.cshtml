@@ -1,0 +1,20 @@
+﻿@model Northwind.Shared.Product
+@{
+    ViewData["Title"] = "Product detail - " + Model.ProductName;
+}
+<h2>Product detail - @Model.ProductName</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>Product Id</dt>
+        <dd>@Model.ProductId</dd>
+        <dt>Product Name</dt>
+        <dd>@Model.ProductName</dd>
+        <dt>Category Id</dt>
+        <dd>@(Model.Category is null ? Model.CategoryId : Model.Category.CategoryName)</dd>
+        <dt>Unit price</dt>
+        <dd>@Model.UnitPrice</dd>
+        <dt>Units in stock</dt>
+        <dd>@Model.UnitsInStock</dd>
+    </dl>
+</div>

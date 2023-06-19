@@ -22,6 +22,23 @@ namespace Northwind.Controllers
             return View(model);
         }
 
+        public IActionResult ProductDetail(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return BadRequest("You have to pass a product id!");
+            }
+
+            Product? model = db.Products.SingleOrDefault(p => p.ProductId == id);
+
+            if (model is null)
+            {
+                return NotFound($"Product {id} not found");
+            }
+
+            return View(model);
+        }
+
         public IActionResult Privacy()
         {
             _logger.LogError("This is a serious error (not!)");
