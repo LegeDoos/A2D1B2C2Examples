@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Data;
+using Northwind.Shared;
 
 namespace Northwind
 {
@@ -23,6 +24,17 @@ namespace Northwind
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            string? sqlServerConnection = builder.Configuration.GetConnectionString("NorthwindConnection");
+            if (String.IsNullOrEmpty(sqlServerConnection))
+            {
+                Console.WriteLine("SQL server connection string is missing!");
+            }
+            else
+            {
+                // hier roep je de extension method aan!
+                builder.Services.AddNorthwindContext(sqlServerConnection);
+            }
 
             var app = builder.Build();
 
