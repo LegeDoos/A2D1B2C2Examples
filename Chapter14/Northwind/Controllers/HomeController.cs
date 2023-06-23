@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Northwind.Models;
 using Northwind.Shared;
 using System.Diagnostics;
@@ -39,6 +40,8 @@ namespace Northwind.Controllers
             return View(model);
         }
 
+
+        [Authorize(Roles = "Administrators")]
         public IActionResult Privacy()
         {
             _logger.LogError("This is a serious error (not!)");
