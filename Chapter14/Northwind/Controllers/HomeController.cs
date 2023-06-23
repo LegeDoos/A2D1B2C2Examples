@@ -17,6 +17,7 @@ namespace Northwind.Controllers
             db = injectedContext;
         }
 
+        [ResponseCache(Duration = 100, Location = ResponseCacheLocation.Client)]
         public IActionResult Index()
         {
             HomeIndexViewModel model = new(Random.Shared.Next(1, 1001), db.Categories.ToList(), db.Products.ToList());
