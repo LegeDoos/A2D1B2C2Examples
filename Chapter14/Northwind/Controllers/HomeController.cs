@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Northwind.Models;
 using Northwind.Shared;
 using System.Diagnostics;
@@ -84,5 +85,25 @@ namespace Northwind.Controllers
             return View(model);
         }
 
+
+        public IActionResult ProductsThatCostMoreThan(decimal? price)
+        {
+            if (!price.HasValue)
+            {
+                return BadRequest("You must pass a product price!");
+            }
+            IEnumerable<Product> model = db.Products
+                .Include(p => p.Category)
+                .Include(p => p.Supplier)
+                .Where(p => p.UnitPrice > price);
+
+            if (!model.Any())
+            {
+                return NotFound($"No products found that cost more than {price:C}.");
+            }
+
+            ViewData["MaxPrice"] = price.Value.ToString("C");
+            return View(model);
+        }
     }
 }
