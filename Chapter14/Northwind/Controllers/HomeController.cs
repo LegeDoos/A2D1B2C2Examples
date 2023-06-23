@@ -42,6 +42,7 @@ namespace Northwind.Controllers
 
 
         [Authorize(Roles = "Administrators")]
+        [Route("private")]
         public IActionResult Privacy()
         {
             _logger.LogError("This is a serious error (not!)");
