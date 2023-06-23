@@ -70,7 +70,13 @@ namespace Northwind.Controllers
         [HttpPost]
         public IActionResult ModelBinding(Thing thing)
         {
-            return View(thing);
+            HomeModelBindingViewModel model = new(
+                thing, 
+                !ModelState.IsValid, 
+                ModelState.Values.SelectMany(state => state.Errors).Select(error => error.ErrorMessage)
+            );
+
+            return View(model);
         }
 
     }
