@@ -52,5 +52,26 @@ namespace Northwind.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        /// <summary>
+        /// Modelbinding example: page with a form to submit
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult ModelBinding()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Page to show the model bound thing
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult ModelBinding(Thing thing)
+        {
+            return View(thing);
+        }
+
     }
 }
