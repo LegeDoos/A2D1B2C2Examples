@@ -5,12 +5,14 @@ namespace WorkingWithEFCore
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Hello, Working With EF Core!!!!");
 
-            NorthwindDb db = new NorthwindDb(); ;
+            NorthwindDb db = new NorthwindDb();
             Console.WriteLine($"Provider: {db.Database.ProviderName}");
+
+
         }
     }
 }
