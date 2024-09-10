@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace CodeFirstExample.Migrations
+namespace ModelFirstExample.Migrations
 {
     /// <inheritdoc />
     public partial class AddVoorbeeldToDatabase : Migration

@@ -1,4 +1,4 @@
-﻿using CodeFirstExample.Models;
+﻿using ModelFirstExample.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeFirstExample.Data
+namespace ModelFirstExample.Data
 {
     public class VoorbeeldDb : DbContext
     {

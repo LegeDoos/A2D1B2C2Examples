@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace CodeFirstExample.Migrations
+namespace ModelFirstExample.Migrations
 {
     /// <inheritdoc />
     public partial class AddTableWithRelationAndData1 : Migration
